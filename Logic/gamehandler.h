@@ -4,7 +4,8 @@
 #include <QObject>
 #include <QVector>
 #include <QTimer>
-#include "player.h"
+#include "Logic/player.h"
+#include "GUI/chip.h"
 
 
 /**

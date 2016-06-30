@@ -40,3 +40,8 @@ HEADERS  += \
 
 FORMS += \
     GUI/mainwindow.ui
+
+
+textures.files = textures/*
+textures.path = $$OUT_PWD/textures/
+INSTALLS += textures

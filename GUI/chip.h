@@ -2,16 +2,20 @@
 #define CHIP_H
 
 #include <QWidget>
+#include <QLabel>
 
-class Chip : public QWidget
+enum class ChipColor{red, yellow, noColor};
+
+class Chip : public QLabel
 {
     Q_OBJECT
 public:
-    explicit Chip(QWidget *parent = 0);
+    Chip(ChipColor color, QWidget *parent = 0);
 
-signals:
+    ChipColor getColor();
 
-public slots:
+private:
+    ChipColor color;
 };
 
 #endif // CHIP_H

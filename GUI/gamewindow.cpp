@@ -1,14 +1,16 @@
 #include "gamewindow.h"
 
-GameWindow::GameWindow()
+GameWindow::GameWindow() : QWidget()
 {
 
 }
 
-/**
- * @brief GameWindow::redrawField Redraws the the grid and the chips on it
- */
-void GameWindow::redrawField()
+void GameWindow::insertChip(ChipColor color, int column)
+{
+
+}
+
+void GameWindow::requestMove(ChipColor color)
 {
 
 }

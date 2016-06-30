@@ -2,8 +2,7 @@
 #define PLAYER_H
 #include <QVector>
 #include <QObject>
-
-enum class ChipColor { yellow, red, noColor };
+#include "GUI/chip.h"
 
 class Player : public QObject
 {
