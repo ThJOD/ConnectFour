@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "Logic/gamehandler.h"
+#include "GUI/gamewindow.h"
+
 namespace Ui {
 class MainWindow;
 }

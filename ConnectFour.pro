@@ -13,26 +13,30 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mainwindow.cpp \
-    gamehandler.cpp \
-    gamewindow.cpp \
-    player.cpp \
-    gamestartdialog.cpp \
-    gamesimulator.cpp \
-    gamereplayer.cpp \
-    networkplayer.cpp \
-    humanplayer.cpp
+    GUI/gamestartdialog.cpp \
+    GUI/gamewindow.cpp \
+    GUI/mainwindow.cpp \
+    Logic/gamehandler.cpp \
+    Logic/gamereplayer.cpp \
+    Logic/gamesimulator.cpp \
+    Logic/humanplayer.cpp \
+    Logic/networkplayer.cpp \
+    Logic/player.cpp \
+    GUI/field.cpp \
+    GUI/chip.cpp
 
 HEADERS  += \
-    mainwindow.h \
-    gamehandler.h \
-    gamewindow.h \
-    player.h \
-    gamestartdialog.h \
-    gamesimulator.h \
-    gamereplayer.h \
-    networkplayer.h \
-    humanplayer.h
+    GUI/gamestartdialog.h \
+    GUI/gamewindow.h \
+    GUI/mainwindow.h \
+    Logic/gamehandler.h \
+    Logic/gamereplayer.h \
+    Logic/gamesimulator.h \
+    Logic/humanplayer.h \
+    Logic/networkplayer.h \
+    Logic/player.h \
+    GUI/field.h \
+    GUI/chip.h
 
 FORMS += \
-    mainwindow.ui
+    GUI/mainwindow.ui

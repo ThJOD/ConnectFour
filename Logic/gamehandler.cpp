@@ -1,5 +1,11 @@
 #include "gamehandler.h"
 
+/**
+ * @brief GameHandler::GameHandler This constructor initializes a new game between player 1 and player 2
+ * @param firstPlayer
+ * @param secondPlayer
+ * @param parent
+ */
 GameHandler::GameHandler(Player *firstPlayer, Player *secondPlayer, QObject *parent) :
     player1(firstPlayer), player2(secondPlayer)
 {
@@ -16,6 +22,9 @@ GameHandler::GameHandler(Player *firstPlayer, Player *secondPlayer, QObject *par
     connect(moveTimer, SIGNAL(timeout()), this, SLOT(handleTimerTimeout()));
 }
 
+/**
+ * @brief GameHandler::startGame starts the game after the GameHandler object has been initialized
+ */
 void GameHandler::startGame()
 {
     player1->requestMove(field);
@@ -24,6 +33,12 @@ void GameHandler::startGame()
     }
 }
 
+/**
+ * @brief GameHandler::makeMove reacts to the move a player. This slot should be called by one of the
+ * participants. It checks if the move is correct and reacts appropriatly
+ * @param color the color of the player who made the move
+ * @param column the column into which the player wants to place his chip
+ */
 void GameHandler::makeMove(ChipColor color, int column)
 {
     //stop timer when still active
@@ -89,6 +104,10 @@ void GameHandler::makeMove(ChipColor color, int column)
     emit playerMadeMove(color, column);
 }
 
+/**
+ * @brief GameHandler::handleTimerTimeout is called when the Timer set up for the current move is over.
+ * It then determines whose move it was and ends the game accordingly.
+ */
 void GameHandler::handleTimerTimeout()
 {
     if(status == Status::turn_player1)
@@ -98,6 +117,11 @@ void GameHandler::handleTimerTimeout()
     endGame();
 }
 
+/**
+ * @brief GameHandler::playerWon checks if the player who made the last move has won the game
+ * @param column The index of the column of the last move from the current player
+ * @return true if the player won after the last move
+ */
 bool GameHandler::playerWon(int column)
 {
     //the last chip in the specified column should be the one inserted from the current player
@@ -200,7 +224,10 @@ bool GameHandler::playerWon(int column)
     return false;
 }
 
-
+/**
+ * @brief GameHandler::endGame is called when the game is over. It determines the reason and emits gameOver() with
+ * a message describing the reason
+ */
 void GameHandler::endGame()
 {
     QString player1Name = player1->getName();
