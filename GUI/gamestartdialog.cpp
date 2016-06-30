@@ -2,5 +2,4 @@
 
 GameStartDialog::GameStartDialog()
 {
-
 }

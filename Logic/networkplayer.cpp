@@ -1,6 +1,6 @@
 #include "networkplayer.h"
 
-NetworkPlayer::NetworkPlayer()
+NetworkPlayer::NetworkPlayer(QString name) : Player(name)
 {
 
 }

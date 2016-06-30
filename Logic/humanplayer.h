@@ -1,11 +1,12 @@
 #ifndef HUMANPLAYER_H
 #define HUMANPLAYER_H
 
+#include "player.h"
 
-class HumanPlayer
+class HumanPlayer : public Player
 {
 public:
-    HumanPlayer();
+    HumanPlayer(QString name);
 };
 
 #endif // HUMANPLAYER_H
